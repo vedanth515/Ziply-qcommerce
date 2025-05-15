@@ -1,16 +1,17 @@
 import React from 'react'
-import Navbar from './Components/Navbar'
+import Navbar from './Components/Navbar.jsx'
 import { Route, Routes, useLocation } from 'react-router-dom'
-import Home from './Pages/Home'
+import Home from './Pages/Home.jsx'
 import {Toaster} from "react-hot-toast"
-import Footer from './Components/Fotter'
-import { useAppContext } from './Context/AppContext'
-import Login from './Components/Login'
-import AllProducts from './Pages/AllProducts'
-import ProductCategroy from './Pages/ProductCategroy'
-import ProductDetails from './Pages/ProductsDetails'
-import Cart from './Pages/Cart'
-import AddAddress from './Pages/AddAddress'
+import Footer from './Components/Fotter.jsx'
+import { useAppContext } from './Context/AppContext.jsx'
+import Login from './Components/Login.jsx'
+import AllProducts from './Pages/AllProducts.jsx'
+import ProductCategroy from './Pages/ProductCategory.jsx'
+import ProductDetails from './Pages/ProductsDetails.jsx'
+import Cart from './Pages/Cart.jsx'
+import AddAddress from './Pages/AddAddress.jsx'
+import MyOrders from './Pages/MyOrders.jsx'
 
 
 
@@ -39,7 +40,7 @@ const App = () => {
           <Route path='/products/:category/:id' element={<ProductDetails />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/add-address' element={<AddAddress />} />
-
+          <Route path='/my-orders' element={<MyOrders/>}/>
         </Routes>
       </div>
      { !isSellerPath && <Footer/>}
