@@ -29,7 +29,7 @@ const SellerLogin = () => {
             </div>
             <div className='w-full'>
                  <p>Password</p>
-                 <input className='border border-gray-200 rounded w-full p-2 mt-1 outline-primary' type="password" placeholder='enter your password' />
+                 <input onChange={(e)=>setPassword(e.target.value)} value={password} className='border border-gray-200 rounded w-full p-2 mt-1 outline-primary' type="password" placeholder='enter your password' />
             </div>
 
             <button className='bg-primary text-white w-full py-2 rounded-md cursor-pointer'>Login</button>
