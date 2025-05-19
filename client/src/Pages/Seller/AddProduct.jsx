@@ -12,7 +12,7 @@ const AddProduct = () => {
 
     const onSubmitHandler =async(event)=>{
         event.preventDefault();
-    }
+    };
     
 
     return (
