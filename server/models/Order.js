@@ -9,7 +9,7 @@ const orderSchema = new mongoose.Schema({
     }],
     userId: { type: Number, required: true },
     address: { type: String, required: true, ref: 'address' },
-    status: { type: String, default: "Order Placed" },
+    status: { type: String, required: true, default: "Order Placed" },
     paymentType: { type: String, required: true },
     isPaid: { type: Boolean, required: true, default: false },
 

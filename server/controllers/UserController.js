@@ -192,7 +192,7 @@ export const register = async (req, res) => {
 // Login User
 export const login = async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { email, password } = req.body || {};
 
         if (!email || !password) {
             return res.json({ success: false, message: 'Email and password are required!' });
@@ -233,7 +233,7 @@ export const login = async (req, res) => {
 // Check Auth
 export const isAuth = async (req, res) => {
     try {
-        const userId = req.userId;
+        const userId = req.id;
         const user = await User.findById(userId).select("-password");
 
         if (!user) {
@@ -256,7 +256,7 @@ export const logout = async (req, res) => {
             sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
         });
 
-        return res.json({ success: true, message: "Logged Out" });
+        return res.json({ success: true, message: "Logged Out Successfully" });
     } catch (error) {
         console.log(error.message);
         return res.json({ success: false, message: error.message });

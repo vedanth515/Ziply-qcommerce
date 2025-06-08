@@ -41,12 +41,13 @@
 
 
 // controllers/cartController.js
+
 import User from "../models/User.js";
 
 export const updateCart = async (req, res) => {
   try {
     const { cartItems } = req.body;
-    const userId = req.userId; // ✅ coming from auth middleware
+    const userId = req.id; // ✅ coming from auth middleware
 
     if (!userId) {
       return res.status(401).json({ success: false, message: "Unauthorized: No user ID" });

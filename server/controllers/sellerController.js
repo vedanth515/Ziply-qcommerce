@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken"
-
+import dotenv from "dotenv"
 // seller login : /api/seller/login
 
 export const sellerLogin = async (req, res) => {
