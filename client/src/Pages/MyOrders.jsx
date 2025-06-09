@@ -6,10 +6,12 @@ const MyOrders = () => {
 
   const [myOrders, setMyOrders] = useState([])
   const { currency, axios, user } = useAppContext();
+  
 
   const fetchMyOrders = async () => {
     try {
       const { data } = await axios.get('/api/order/user')
+      console.log("Received from backend: ", data);
       if (data.success) {
         setMyOrders(data.orders)
       }
